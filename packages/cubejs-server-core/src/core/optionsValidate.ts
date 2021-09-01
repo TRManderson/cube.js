@@ -97,10 +97,9 @@ const schemaOptions = Joi.object().keys({
       redisPoolOptions: Joi.object().keys({
         poolMin: Joi.number().min(0),
         poolMax: Joi.number().min(0),
-        idleTimeoutSeconds: Joi.number().min(0),
-        softIdleTimeoutSeconds: Joi.number().min(0),
         createClient: Joi.func(),
         destroyClient: Joi.func(),
+        poolOptions: Joi.object()
       }),
       continueWaitTimeout: Joi.number().min(0).integer(),
       skipExternalCacheAndQueue: Joi.boolean(),
